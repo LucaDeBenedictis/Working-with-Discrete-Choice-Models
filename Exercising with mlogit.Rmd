@@ -1,0 +1,40 @@
+---
+title: "Exercising with mlogit"
+author: "Luca De Benedictis"
+date: "2022-12-21"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+This R Markdown document contains the report on the use of the `mlogit` package and the formula-data interface (see <https://cran.r-project.org/web/packages/mlogit/vignettes> for the `mlogit` vignettes and <https://cran.r-project.org/web/packages/Formula/vignettes/Formula.pdf> for the `Formula` vignette).
+
+
+```{r , include=TRUE, message=FALSE}
+library(mlogit)
+library(Formula)
+```
+
+## Getting and inspecting the data
+
+
+```{r , include=TRUE, message=FALSE}
+data("Train", package="mlogit")
+
+names(Train)
+summary(Train)
+
+Train$choiceid <- 1:nrow(Train)
+
+head(Train, 3)
+
+
+
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
